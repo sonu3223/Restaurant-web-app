@@ -40,6 +40,10 @@ section h2{text-align:center;font-size:2.5rem;margin-bottom:20px;color:#333;}
 .reservation button{background:#f39c12;color:#fff;padding:12px 20px;border:none;border-radius:30px;font-weight:bold;cursor:pointer;transition:0.3s;}
 .reservation button:hover{background:#e67e22;}
 .contact{background:#222;color:#fff;text-align:center;}
+.contact form{max-width:600px;margin:20px auto;text-align:left;}
+.contact input,.contact textarea{width:100%;padding:10px;margin:8px 0;border-radius:5px;border:1px solid #ccc;}
+.contact button{background:#f39c12;color:#fff;padding:12px 20px;border:none;border-radius:30px;font-weight:bold;cursor:pointer;transition:0.3s;}
+.contact button:hover{background:#e67e22;}
 .contact-details{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
 .contact-card{background:#333;padding:20px;border-radius:10px;width:250px;}
 .contact-card h3{margin-bottom:10px;color:#f39c12;}
@@ -103,27 +107,36 @@ footer{background:#111;color:#aaa;text-align:center;padding:15px;}
 
 <section class="reservation" id="reservation">
 <h2>Book a Table</h2>
-<form action="https://formspree.io/f/mayvlbke" method="POST">
-<input type="text" name="name" placeholder="Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<input type="tel" name="phone" placeholder="Phone" required>
-<input type="date" name="date" required>
-<input type="time" name="time" required>
-<input type="number" name="people" placeholder="Number of Guests" required>
-<textarea name="message" placeholder="Special Requests"></textarea>
-<button type="submit">Reserve Now</button>
+<form id="reservationForm" action="https://formspree.io/f/mayvlbke" method="POST">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <input type="tel" name="phone" placeholder="Phone" required>
+  <input type="date" name="date" required>
+  <input type="time" name="time" required>
+  <input type="number" name="people" placeholder="Number of Guests" required>
+  <textarea name="message" placeholder="Special Requests"></textarea>
+  <button type="submit">Reserve Now</button>
 </form>
+<p id="formMsg" style="margin-top:10px; font-weight:bold;"></p>
 </section>
 
 <section class="contact" id="contact">
 <h2>Contact Us</h2>
+<form id="contactForm" action="https://formspree.io/f/mayvlbke" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <textarea name="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+<p id="contactMsg" style="margin-top:10px; font-weight:bold;"></p>
+
 <div class="contact-details">
-<div class="contact-card"><h3>Phone</h3><p>+91 9876543210</p></div>
-<div class="contact-card"><h3>Email</h3><p>skumar1234e@gmail.com</p></div>
-<div class="contact-card"><h3>Address</h3><p>Main Market, Palia Kalan, Lakhimpur Kheri, UP</p></div>
+  <div class="contact-card"><h3>Phone</h3><p>+91 9876543210</p></div>
+  <div class="contact-card"><h3>Email</h3><p>skumar1234e@gmail.com</p></div>
+  <div class="contact-card"><h3>Address</h3><p>Main Market, Palia Kalan, Lakhimpur Kheri, UP</p></div>
 </div>
 <div class="map">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.176194070384!2d80.48547641504458!3d27.551026382854776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399e5f181f1dfb07%3A0x123456789abcdef!2sPalia%20Kalan%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.176194070384!2d80.48547641504458!3d27.551026382854776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399e5f181f1dfb07%3A0x123456789abcdef!2sPalia%20Kalan%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
 </div>
 </section>
 
@@ -131,5 +144,52 @@ footer{background:#111;color:#aaa;text-align:center;padding:15px;}
 <p>© 2025 Sonu's Tandoori Dhaba | Designed with ❤️</p>
 </footer>
 
+<script>
+// Reservation form
+const resForm = document.getElementById("reservationForm");
+const resMsg = document.getElementById("formMsg");
+
+resForm.addEventListener("submit", async function(e){
+  e.preventDefault();
+  let data = new FormData(resForm);
+  let res = await fetch(resForm.action, {
+    method: resForm.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+  if (res.ok) {
+    resMsg.innerText = "✅ Reservation submitted successfully!";
+    resMsg.style.color = "green";
+    resForm.reset();
+  } else {
+    resMsg.innerText = "❌ Something went wrong, please try again.";
+    resMsg.style.color = "red";
+  }
+});
+
+// Contact form
+const contactForm = document.getElementById("contactForm");
+const contactMsg = document.getElementById("contactMsg");
+
+contactForm.addEventListener("submit", async function(e){
+  e.preventDefault();
+  let data = new FormData(contactForm);
+  let res = await fetch(contactForm.action, {
+    method: contactForm.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+  if (res.ok) {
+    contactMsg.innerText = "✅ Message sent successfully!";
+    contactMsg.style.color = "green";
+    contactForm.reset();
+  } else {
+    contactMsg.innerText = "❌ Failed to send message.";
+    contactMsg.style.color = "red";
+  }
+});
+</script>
+
 </body>
 </html>
+
