@@ -1,194 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sonu's Tandoori Dhaba</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{scroll-behavior:smooth;}
-nav{position:fixed;top:0;left:0;width:100%;background:#222;display:flex;justify-content:center;gap:40px;padding:15px 0;z-index:1000;}
-nav a{color:#fff;text-decoration:none;font-size:18px;transition:0.3s;}
-nav a:hover{color:#f39c12;}
-.hero{background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://github.com/user-attachments/assets/615a1b62-f270-4097-be4e-458d2a99bee1') no-repeat center/cover;height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:20px;}
-.hero h1{font-size:3rem;margin-bottom:10px;text-shadow:2px 2px 5px #000;}
-.hero p{font-size:1.3rem;margin-bottom:20px;}
-.btn{background:#f39c12;padding:12px 25px;color:#fff;border-radius:30px;text-decoration:none;font-weight:bold;transition:0.3s;}
-.btn:hover{background:#e67e22;}
-section{padding:80px 20px; padding-top:120px; margin-top:-120px;}
-section h2{text-align:center;font-size:2.5rem;margin-bottom:20px;color:#333;}
-.about{max-width:800px;margin:auto;text-align:center;font-size:1.1rem;line-height:1.8;}
-.menu{background:#f8f8f8;}
-.menu-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;max-width:1000px;margin:auto;}
-.menu-item{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,0.1);transition:transform 0.3s;}
-.menu-item:hover{transform:translateY(-8px);}
-.menu-item img{width:100%;border-radius:10px;height:180px;object-fit:cover;}
-.menu-item h3{margin:15px 0 10px;color:#222;}
-.menu-item p{color:#555;}
-.menu-item span{color:#f39c12;font-weight:bold;font-size:18px;}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;max-width:1000px;margin:auto;}
-.gallery img{width:100%;border-radius:10px;height:150px;object-fit:cover;transition:transform 0.3s;}
-.gallery img:hover{transform:scale(1.05);}
-.testimonials{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-.testimonial-card{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-.testimonial-card p{font-style:italic;color:#555;margin-bottom:10px;}
-.testimonial-card .author{font-weight:bold;color:#222;}
-.reservation{max-width:600px;margin:auto;background:#f8f8f8;padding:20px;border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-.reservation input,.reservation textarea{width:100%;padding:10px;margin:8px 0;border-radius:5px;border:1px solid #ccc;}
-.reservation button{background:#f39c12;color:#fff;padding:12px 20px;border:none;border-radius:30px;font-weight:bold;cursor:pointer;transition:0.3s;}
-.reservation button:hover{background:#e67e22;}
-.contact{background:#222;color:#fff;text-align:center;}
-.contact form{max-width:600px;margin:20px auto;text-align:left;}
-.contact input,.contact textarea{width:100%;padding:10px;margin:8px 0;border-radius:5px;border:1px solid #ccc;}
-.contact button{background:#f39c12;color:#fff;padding:12px 20px;border:none;border-radius:30px;font-weight:bold;cursor:pointer;transition:0.3s;}
-.contact button:hover{background:#e67e22;}
-.contact-details{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin-top:30px;}
-.contact-card{background:#333;padding:20px;border-radius:10px;width:250px;}
-.contact-card h3{margin-bottom:10px;color:#f39c12;}
-.map{margin-top:30px;}
-iframe{width:100%;height:300px;border:none;border-radius:10px;}
-footer{background:#111;color:#aaa;text-align:center;padding:15px;}
-@media(max-width:768px){.contact-card{width:90%;}.hero h1{font-size:2.2rem;}.hero p{font-size:1rem;} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Web App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #333; color: #fff; padding: 15px; text-align: center; }
+    section { padding: 20px; }
+    form { max-width: 400px; margin: auto; }
+    input, textarea, button {
+      display: block; width: 100%; margin: 10px 0;
+      padding: 10px; font-size: 16px;
+    }
+    button { background: #28a745; color: #fff; border: none; cursor: pointer; }
+    button:hover { background: #218838; }
+    #formMsg, #contactMsg { text-align: center; font-weight: bold; }
+  </style>
 </head>
 <body>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#menu">Menu</a>
-<a href="#gallery">Gallery</a>
-<a href="#testimonials">Testimonials</a>
-<a href="#reservation">Reservation</a>
-<a href="#contact">Contact</a>
-</nav>
+  <header>
+    <h1>Welcome to My Restaurant</h1>
+  </header>
 
-<section class="hero" id="home">
-<h1>Welcome to Sonu's Tandoori Dhaba</h1>
-<p>Authentic Taste • Fresh Ingredients • Love in Every Bite</p>
-<a href="#menu" class="btn">Explore Menu</a>
-</section>
+  <!-- Reservation Form -->
+  <section>
+    <h2>Reserve a Table</h2>
+    <form id="reservationForm" action="https://formspree.io/f/xjkewyyk" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <input type="date" name="date" required>
+      <input type="time" name="time" required>
+      <input type="number" name="guests" placeholder="Number of Guests" required>
+      <button type="submit">Reserve Now</button>
+    </form>
+    <p id="formMsg"></p>
+  </section>
 
-<section id="about">
-<h2>About Us</h2>
-<div class="about">
-<p>At Sonu’s Dhaba, we serve authentic North Indian flavors cooked with love and tradition. From sizzling tandoori dishes to homestyle curries, every meal is prepared fresh with local ingredients. Our goal is simple – to give you a taste that feels like home.</p>
-</div>
-</section>
+  <!-- Contact Form -->
+  <section>
+    <h2>Contact Us</h2>
+    <form id="contactForm" action="https://formspree.io/f/xjkewyyk" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="contactMsg"></p>
+  </section>
 
-<section class="menu" id="menu">
-<h2>Our Menu</h2>
-<div class="menu-items">
-<div class="menu-item"><img src="https://github.com/user-attachments/assets/615a1b62-f270-4097-be4e-458d2a99bee1" alt="Chicken Tandoori"><h3>Chicken Tandoori</h3><p>Juicy chicken marinated in spices & roasted in tandoor.</p><span>₹250</span></div>
-<div class="menu-item"><img src="https://github.com/user-attachments/assets/d45eb87f-9bbe-4088-90dd-dad3c9865d3b" alt="Paneer Tikka"><h3>Paneer Tikka</h3><p>Soft paneer cubes grilled with spices and veggies.</p><span>₹200</span></div>
-<div class="menu-item"><img src="https://github.com/user-attachments/assets/fd1828bc-5f4a-473f-a1e6-cc6718b88cec" alt="Butter Naan"><h3>Butter Naan</h3><p>Soft and fluffy naan topped with melted butter.</p><span>₹50</span></div>
-<div class="menu-item"><img src="https://github.com/user-attachments/assets/7567659d-352e-418b-a077-ce833b0ff2b3" alt="Veg Biryani"><h3>Veg Biryani</h3><p>Fragrant basmati rice with mixed vegetables and spices.</p><span>₹180</span></div>
-</div>
-</section>
+  <script>
+    // Reservation form
+    const resForm = document.getElementById("reservationForm");
+    const resMsg = document.getElementById("formMsg");
 
-<section class="gallery" id="gallery">
-<h2>Gallery</h2>
-<img src="https://github.com/user-attachments/assets/615a1b62-f270-4097-be4e-458d2a99bee1" alt="Chicken Tandoori">
-<img src="https://github.com/user-attachments/assets/d45eb87f-9bbe-4088-90dd-dad3c9865d3b" alt="Paneer Tikka">
-<img src="https://github.com/user-attachments/assets/fd1828bc-5f4a-473f-a1e6-cc6718b88cec" alt="Butter Naan">
-<img src="https://github.com/user-attachments/assets/7567659d-352e-418b-a077-ce833b0ff2b3" alt="Veg Biryani">
-</section>
+    resForm.addEventListener("submit", async function(e){
+      e.preventDefault();
+      let data = new FormData(resForm);
+      let res = await fetch(resForm.action, {
+        method: resForm.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        resMsg.innerText = "✅ Reservation submitted successfully!";
+        resMsg.style.color = "green";
+        resForm.reset();
+      } else {
+        resMsg.innerText = "❌ Something went wrong, please try again.";
+        resMsg.style.color = "red";
+      }
+    });
 
-<section class="testimonials" id="testimonials">
-<h2>Testimonials</h2>
-<div class="testimonials">
-<div class="testimonial-card"><p>"The food was amazing! Loved the tandoori chicken."</p><div class="author">- Ramesh K.</div></div>
-<div class="testimonial-card"><p>"Best restaurant experience ever. Highly recommend."</p><div class="author">- Priya S.</div></div>
-<div class="testimonial-card"><p>"Lovely ambiance and delicious food. Will visit again!"</p><div class="author">- Anil T.</div></div>
-</div>
-</section>
+    // Contact form
+    const contactForm = document.getElementById("contactForm");
+    const contactMsg = document.getElementById("contactMsg");
 
-<section class="reservation" id="reservation">
-<h2>Book a Table</h2>
-<form id="reservationForm" action="https://formspree.io/f/mayvlbke" method="POST">
-  <input type="text" name="name" placeholder="Name" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <input type="tel" name="phone" placeholder="Phone" required>
-  <input type="date" name="date" required>
-  <input type="time" name="time" required>
-  <input type="number" name="people" placeholder="Number of Guests" required>
-  <textarea name="message" placeholder="Special Requests"></textarea>
-  <button type="submit">Reserve Now</button>
-</form>
-<p id="formMsg" style="margin-top:10px; font-weight:bold;"></p>
-</section>
-
-<section class="contact" id="contact">
-<h2>Contact Us</h2>
-<form id="contactForm" action="https://formspree.io/f/mayvlbke" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" placeholder="Your Message" required></textarea>
-  <button type="submit">Send Message</button>
-</form>
-<p id="contactMsg" style="margin-top:10px; font-weight:bold;"></p>
-
-<div class="contact-details">
-  <div class="contact-card"><h3>Phone</h3><p>+91 9876543210</p></div>
-  <div class="contact-card"><h3>Email</h3><p>skumar1234e@gmail.com</p></div>
-  <div class="contact-card"><h3>Address</h3><p>Main Market, Palia Kalan, Lakhimpur Kheri, UP</p></div>
-</div>
-<div class="map">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.176194070384!2d80.48547641504458!3d27.551026382854776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399e5f181f1dfb07%3A0x123456789abcdef!2sPalia%20Kalan%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000" allowfullscreen="" loading="lazy"></iframe>
-</div>
-</section>
-
-<footer>
-<p>© 2025 Sonu's Tandoori Dhaba | Designed with ❤️</p>
-</footer>
-
-<script>
-// Reservation form
-const resForm = document.getElementById("reservationForm");
-const resMsg = document.getElementById("formMsg");
-
-resForm.addEventListener("submit", async function(e){
-  e.preventDefault();
-  let data = new FormData(resForm);
-  let res = await fetch(resForm.action, {
-    method: resForm.method,
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  });
-  if (res.ok) {
-    resMsg.innerText = "✅ Reservation submitted successfully!";
-    resMsg.style.color = "green";
-    resForm.reset();
-  } else {
-    resMsg.innerText = "❌ Something went wrong, please try again.";
-    resMsg.style.color = "red";
-  }
-});
-
-// Contact form
-const contactForm = document.getElementById("contactForm");
-const contactMsg = document.getElementById("contactMsg");
-
-contactForm.addEventListener("submit", async function(e){
-  e.preventDefault();
-  let data = new FormData(contactForm);
-  let res = await fetch(contactForm.action, {
-    method: contactForm.method,
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  });
-  if (res.ok) {
-    contactMsg.innerText = "✅ Message sent successfully!";
-    contactMsg.style.color = "green";
-    contactForm.reset();
-  } else {
-    contactMsg.innerText = "❌ Failed to send message.";
-    contactMsg.style.color = "red";
-  }
-});
-</script>
+    contactForm.addEventListener("submit", async function(e){
+      e.preventDefault();
+      let data = new FormData(contactForm);
+      let res = await fetch(contactForm.action, {
+        method: contactForm.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactMsg.innerText = "✅ Message sent successfully!";
+        contactMsg.style.color = "green";
+        contactForm.reset();
+      } else {
+        contactMsg.innerText = "❌ Failed to send message.";
+        contactMsg.style.color = "red";
+      }
+    });
+  </script>
 
 </body>
 </html>
