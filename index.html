@@ -282,53 +282,7 @@
       </div>
     </div>
   </section>
-
-  <!-- RESERVATION -->
-  <section id="reservation" class="reservation">
-    <div class="container">
-      <h2>Book a Table</h2>
-      <form id="reserveForm" action="https://formspree.io/f/mayvlbke" method="POST" novalidate>
-        <!-- keep action: replace with your endpoint if needed -->
-        <input type="text" name="name" placeholder="Name" required>
-        <input type="email" name="_replyto" placeholder="Email" required>
-        <input type="tel" name="phone" placeholder="Phone (e.g. +91xxxxxxxxxx)" required>
-        <div style="display:flex;gap:8px">
-          <input type="date" name="date" required style="flex:1">
-          <input type="time" name="time" required style="flex:1">
-        </div>
-        <input type="number" name="people" placeholder="Number of Guests" min="1" required>
-        <textarea name="message" placeholder="Special Requests (optional)" rows="3"></textarea>
-        <button type="submit">Reserve Now</button>
-        <div id="formMsg" class="small muted" style="margin-top:8px"></div>
-      </form>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2 style="color:#fff">Contact Us</h2>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Phone</h3>
-          <p>+91 98765 43210</p>
-          <p class="small">Call us to reserve or for takeaways</p>
-        </div>
-
-        <div class="contact-card">
-          <h3>Address</h3>
-          <p>Near Market Road, Your City, India</p>
-          <p class="small">Open: 11:00 AM — 11:00 PM</p>
-        </div>
-
-        <div class="contact-card">
-          <h3>Email</h3>
-          <p>sonu@example.com</p>
-          <p class="small">For deliveries & partnerships</p>
-        </div>
-      </div>
-
+  
       <div class="map" style="margin-top:18px">
         <!-- Replace src with your Google Maps embed if available -->
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11648899523!2d72.7410987!3d19.0821978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63c1b4e5b25%3A0x7b7b5b1cfb1a0d6b!2sMumbai!5e0!3m2!1sen!2sin!4v1600000000000!5m2!1sen!2sin" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
