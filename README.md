@@ -1,13 +1,17 @@
-🍴 Restaurant Web App
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/155bacaf-f79c-4e06-b6ba-49e30c59e396" />
+
+
+
+# 🍴 Restaurant Web App
 
 A simple and attractive Restaurant Website created using HTML, CSS, and JavaScript.
 This project is hosted on GitHub Pages and showcases a modern design with different sections like Home, Menu, About Us, Contact, and Location Map.
 
 🚀 Live Demo
 
-👉 Click Here to View Website
+👉 https://sonu3223.github.io/Restaurant-web-app/
 
-📌 Features
+# 📌 Features
 
 🏠 Home Page with banner and restaurant introduction
 
@@ -23,19 +27,19 @@ This project is hosted on GitHub Pages and showcases a modern design with differ
 
 🎨 Responsive Design (works on mobile & desktop)
 
-🛠️ Technologies Used
+# 🛠️ Technologies Used
 
-HTML5 – Structure of the website
+- HTML5 – Structure of the website
 
-CSS3 – Styling and layout
+- CSS3 – Styling and layout
 
-JavaScript – Basic interactivity
+- JavaScript – Basic interactivity
 
-Google Maps Embed – For restaurant location
+- Google Maps Embed – For restaurant location
 
-GitHub Pages – Hosting the project
+- GitHub Pages – Hosting the project
 
-📂 Project Setup
+# 📂 Project Setup
 
 Clone the repository:
 
@@ -44,7 +48,7 @@ git clone https://github.com/sonu3223/Restaurant-web-app.git
 
 Open the folder and run index.html in your browser.
 
-✨ Future Improvements
+# ✨ Future Improvements
 
 Adding a dynamic menu with database connection
 
@@ -54,7 +58,7 @@ User reviews & ratings
 
 Admin panel for content management
 
-🙌 Acknowledgements
+# 🙌 Acknowledgements
 
 Images taken from Google Images
 
